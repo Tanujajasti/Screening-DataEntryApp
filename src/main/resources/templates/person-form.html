@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry Form</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div class="container">
+    <div class="center">
+        <h2 class="title">Data Entry Form</h2>
+        <!-- Check if a confirmation message is present and display it -->
+        <div th:if="${param.success}">
+            <p class="success-message">Person data saved successfully!</p>
+        </div>
+        <form th:action="@{/persons/save}" th:object="${person}" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" th:field="*{name}" id="name" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" th:field="*{age}" id="age" />
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" th:field="*{title}" id="title" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="hometown">Hometown:</label>
+                <input type="text" th:field="*{hometown}" id="hometown" />
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

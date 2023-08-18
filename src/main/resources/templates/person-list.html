@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+  <title>Person List</title>
+</head>
+<body>
+<h1>Data Entry Successful</h1>
+<img src="https://www.gstatic.com/webp/gallery/1.jpg" alt="nice view" width="500" height="200">
+<h2>Person List</h2>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Title</th>
+    <th>Hometown</th>
+  </tr>
+  <tr th:each="person : ${persons}">
+    <td th:text="${person.id}"></td>
+    <td th:text="${person.name}"></td>
+    <td th:text="${person.age}"></td>
+    <td th:text="${person.title}"></td>
+    <td th:text="${person.hometown}"></td>
+  </tr>
+</table>
+<br/>
+<a href="/persons/form">Add New Person</a>
+</body>
+</html>
