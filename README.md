@@ -45,3 +45,8 @@ ENDPOINTS
 
   - GET /persons/list
     This endpoint displays a list of all persons that have been entered into the application. It Renders the person-list.html Thymeleaf template, which displays a table with the details of each person retrieved from the database using the PersonRepository.
+
+
+ADDITIONAL INFORMATION  
+  - Currently, we are using the H2 in-memory database to simplify the implementation, which means that the data is only stored in memory and will be lost when the application is restarted.
+  - Please note that using an in-memory database like H2 for real-world applications might not be suitable for production scenarios where data persistence and management are critical. In a production environment, we would typically use a more robust and scalable database like MySQL, PostgreSQL, or others.
