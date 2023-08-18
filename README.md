@@ -1,5 +1,5 @@
 # Screening-DataEntryApp
-A simple data Entry Application
+We have used Java and Spring to create a simple data entry application.
 
 
 PREREQUISITES
